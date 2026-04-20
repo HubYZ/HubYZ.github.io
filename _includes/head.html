@@ -4,6 +4,54 @@
 
 {% include seo.html %}
 
+{% if page.collection == "publications" %}
+  {% if page.title %}
+    <meta name="citation_title" content="{{ page.title | escape }}">
+  {% endif %}
+
+  {% if page.authors %}
+    {% for author in page.authors %}
+      <meta name="citation_author" content="{{ author | escape }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if page.date %}
+    <meta name="citation_publication_date" content="{{ page.date | date: '%Y/%m/%d' }}">
+  {% endif %}
+
+  {% if page.pdf_url %}
+    <meta name="citation_pdf_url" content="{{ page.pdf_url | absolute_url }}">
+  {% endif %}
+
+  {% if page.citation_journal_title %}
+    <meta name="citation_journal_title" content="{{ page.citation_journal_title | escape }}">
+  {% endif %}
+
+  {% if page.citation_volume %}
+    <meta name="citation_volume" content="{{ page.citation_volume | escape }}">
+  {% endif %}
+
+  {% if page.citation_issue %}
+    <meta name="citation_issue" content="{{ page.citation_issue | escape }}">
+  {% endif %}
+
+  {% if page.citation_firstpage %}
+    <meta name="citation_firstpage" content="{{ page.citation_firstpage | escape }}">
+  {% endif %}
+
+  {% if page.citation_lastpage %}
+    <meta name="citation_lastpage" content="{{ page.citation_lastpage | escape }}">
+  {% endif %}
+
+  {% if page.citation_conference_title %}
+    <meta name="citation_conference_title" content="{{ page.citation_conference_title | escape }}">
+  {% endif %}
+
+  {% if page.citation_doi %}
+    <meta name="citation_doi" content="{{ page.citation_doi | escape }}">
+  {% endif %}
+{% endif %}
+
 <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
 <!-- http://t.co/dKP3o1e -->
