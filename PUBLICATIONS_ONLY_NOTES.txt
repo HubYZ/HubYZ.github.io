@@ -1,8 +1,0 @@
-This package keeps only the publication related content and automation.
-
-Main files to edit:
-- _config.yml
-- _data/publications.tsv
-- publication/<url_slug>/paper.pdf
-- _pages/about.md
-- _pages/publications.md
